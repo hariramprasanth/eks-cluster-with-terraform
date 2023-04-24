@@ -12,6 +12,7 @@ resource "aws_subnet" "my_subnet_test_1" {
   map_public_ip_on_launch = true
   tags = {
     Name = "my-subnet-test-1"
+    "kubernetes.io/cluster/my-web-server" = "shared"
   }
 }
 resource "aws_subnet" "my_subnet_test_2" {
@@ -21,6 +22,8 @@ resource "aws_subnet" "my_subnet_test_2" {
   map_public_ip_on_launch = true
   tags = {
     Name = "my-subnet-test-2"
+    "kubernetes.io/cluster/my-web-server" = "shared"
+
   }
 }
 resource "aws_subnet" "my_subnet_test_3" {
@@ -30,6 +33,8 @@ resource "aws_subnet" "my_subnet_test_3" {
   map_public_ip_on_launch = true
   tags = {
     Name = "my-subnet-test-3"
+    "kubernetes.io/cluster/my-web-server" = "shared"
+
   }
 }
 resource "aws_internet_gateway" "my_test_Ig" {
