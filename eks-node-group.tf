@@ -8,7 +8,7 @@ resource "aws_eks_node_group" "web_server_node_group" {
 
   remote_access {
     ec2_ssh_key               = "web-server-ssh-key-pair"
-    source_security_group_ids = [aws_security_group.web_server_sg.id]
+    source_security_group_ids = [aws_security_group.web_server_sg.id] # this security group is not configured for ec2 instances for inbound and outbound rule. This will appied to cluster as additional security group. Not to EC2s For ec2 cluster itself will creates a security group.
   }
 
   scaling_config {
